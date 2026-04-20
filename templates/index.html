@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Queue</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="shell">
+
+    <header class="header">
+      <span class="wordmark">QUEUE</span>
+      <span class="slot-count" id="slot-count">— / —</span>
+    </header>
+
+    <main class="stage">
+      <div class="player-wrap" id="player-wrap">
+        <div class="empty-state" id="empty-state">
+          <p>Queue is empty.</p>
+          <p class="sub">Add a video below to begin.</p>
+        </div>
+        <iframe
+          id="player"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen
+          style="display:none"
+        ></iframe>
+      </div>
+
+      <div class="title-bar">
+        <span class="video-title" id="video-title">—</span>
+      </div>
+
+      <nav class="controls">
+        <button class="btn" id="btn-prev" title="Previous (←)">&#8592; Prev</button>
+        <button class="btn btn-done" id="btn-done" title="Mark watched &amp; remove">✓ Done</button>
+        <button class="btn" id="btn-next" title="Next (→)">Next &#8594;</button>
+      </nav>
+    </main>
+
+    <section class="queue-panel">
+      <h2 class="panel-label">Up next</h2>
+      <ul class="queue-list" id="queue-list"></ul>
+
+      <div class="add-strip">
+        <input class="add-input" id="add-url"   type="text" placeholder="YouTube URL" autocomplete="off" spellcheck="false"/>
+        <input class="add-input add-title" id="add-title" type="text" placeholder="Title (optional)" autocomplete="off"/>
+        <button class="btn btn-add" id="btn-add">+ Add</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
